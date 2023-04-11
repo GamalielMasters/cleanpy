@@ -114,6 +114,18 @@ TARGETS = (
     ),
     RemoveTarget(
         category=Category.CACHE,
+        name="ruff",
+        target_type=EntryType.DIR,
+        regexp=re.compile(
+            "|".join(
+                [
+                    r"^\.hypothesis$",
+                ]
+            )
+        ),
+    ),
+    RemoveTarget(
+        category=Category.CACHE,
         name="temporary files",
         target_type=EntryType.FILE,
         regexp=re.compile(
